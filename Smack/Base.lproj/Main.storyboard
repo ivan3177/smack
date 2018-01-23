@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,7 +49,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bB-OD-iyY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bB-OD-iyY" customClass="GradientView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZs-Ch-Iyk">
@@ -60,7 +61,7 @@
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADq-LG-0D4">
-                                        <rect key="frame" x="153" y="40.5" width="70.5" height="33"/>
+                                        <rect key="frame" x="153" y="39.5" width="70.5" height="33"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -99,18 +100,73 @@
                         <viewControllerLayoutGuide type="top" id="TPp-PF-RLJ"/>
                         <viewControllerLayoutGuide type="bottom" id="psG-uG-IV9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OOc-BK-hqc">
+                    <view key="view" contentMode="scaleToFill" id="OOc-BK-hqc" customClass="GradientView" customModule="Smack" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gH-vL-YSo">
+                                <rect key="frame" x="16" y="44" width="70.5" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH1-hw-OAI">
+                                <rect key="frame" x="281" y="89.5" width="22" height="22"/>
+                                <state key="normal" image="addChannelButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlw-cA-bmf">
+                                <rect key="frame" x="111" y="590" width="48" height="38"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-CC-YcI">
+                                <rect key="frame" x="16" y="572" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="YN7-d4-wDB"/>
+                                    <constraint firstAttribute="width" constant="75" id="iQT-Df-kd0"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-sL-m15">
+                                <rect key="frame" x="0.0" y="128.5" width="375" height="423.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANNELS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-95-giu">
+                                <rect key="frame" x="16" y="92" width="65.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KWP-95-giu" firstAttribute="leading" secondItem="OOc-BK-hqc" secondAttribute="leadingMargin" id="3NM-MT-RXF"/>
+                            <constraint firstItem="psG-uG-IV9" firstAttribute="top" secondItem="zmP-CC-YcI" secondAttribute="bottom" constant="20" id="3Tw-yz-LBs"/>
+                            <constraint firstItem="mrT-sL-m15" firstAttribute="top" secondItem="KWP-95-giu" secondAttribute="bottom" constant="20" id="7yV-Gm-ung"/>
+                            <constraint firstAttribute="trailing" secondItem="DH1-hw-OAI" secondAttribute="trailing" constant="72" id="9hd-HZ-WRe"/>
+                            <constraint firstItem="Xlw-cA-bmf" firstAttribute="leading" secondItem="zmP-CC-YcI" secondAttribute="trailing" constant="20" id="EEf-JR-tBe"/>
+                            <constraint firstItem="zmP-CC-YcI" firstAttribute="leading" secondItem="OOc-BK-hqc" secondAttribute="leadingMargin" id="JHR-Te-91n"/>
+                            <constraint firstItem="mrT-sL-m15" firstAttribute="leading" secondItem="OOc-BK-hqc" secondAttribute="leading" id="LwL-NY-E9d"/>
+                            <constraint firstItem="Xlw-cA-bmf" firstAttribute="centerY" secondItem="zmP-CC-YcI" secondAttribute="centerY" id="O0e-Tm-9sw"/>
+                            <constraint firstAttribute="trailing" secondItem="mrT-sL-m15" secondAttribute="trailing" id="QLl-TU-0Pl"/>
+                            <constraint firstItem="0gH-vL-YSo" firstAttribute="leading" secondItem="OOc-BK-hqc" secondAttribute="leadingMargin" id="Rhg-m3-Agn"/>
+                            <constraint firstItem="DH1-hw-OAI" firstAttribute="centerY" secondItem="KWP-95-giu" secondAttribute="centerY" id="VxZ-5t-O2z"/>
+                            <constraint firstItem="0gH-vL-YSo" firstAttribute="top" secondItem="TPp-PF-RLJ" secondAttribute="bottom" constant="24" id="alb-Yy-oLi"/>
+                            <constraint firstItem="zmP-CC-YcI" firstAttribute="top" secondItem="mrT-sL-m15" secondAttribute="bottom" constant="20" id="g27-YF-u2c"/>
+                            <constraint firstItem="KWP-95-giu" firstAttribute="leading" secondItem="OOc-BK-hqc" secondAttribute="leadingMargin" id="gQF-Lv-jBf"/>
+                            <constraint firstItem="KWP-95-giu" firstAttribute="top" secondItem="0gH-vL-YSo" secondAttribute="bottom" constant="15" id="m9G-7a-6q6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyQ-Wk-hsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="-384"/>
+            <point key="canvasLocation" x="837.60000000000002" y="-384.55772113943033"/>
         </scene>
     </scenes>
     <resources>
+        <image name="addChannelButton" width="22" height="22"/>
+        <image name="menuProfileIcon" width="99" height="99"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
 </document>
