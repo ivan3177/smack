@@ -21,6 +21,8 @@
 		C20435C22017A90F00D5EA01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20435C12017A90F00D5EA01 /* AuthService.swift */; };
 		C20435C42017B2DA00D5EA01 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20435C32017B2DA00D5EA01 /* RoundedButton.swift */; };
 		C20435C62017BCD000D5EA01 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20435C52017BCD000D5EA01 /* UserDataService.swift */; };
+		C20435C82017DAC500D5EA01 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20435C72017DAC500D5EA01 /* AvatarPickerVC.swift */; };
+		C20435CA2017DC3400D5EA01 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20435C92017DC3400D5EA01 /* AvatarCell.swift */; };
 		E099101088DDD7F1FCD93F8F /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9729326E47A9C27C407234D /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		C20435C12017A90F00D5EA01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C20435C32017B2DA00D5EA01 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		C20435C52017BCD000D5EA01 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		C20435C72017DAC500D5EA01 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		C20435C92017DC3400D5EA01 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		D9729326E47A9C27C407234D /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 				C20435B52017396800D5EA01 /* ChannelVC.swift */,
 				C20435BC20174FE700D5EA01 /* LoginVC.swift */,
 				C20435BE2017678500D5EA01 /* CreateAccountVC.swift */,
+				C20435C72017DAC500D5EA01 /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				C20435B7201742F500D5EA01 /* GradientView.swift */,
 				C20435C32017B2DA00D5EA01 /* RoundedButton.swift */,
+				C20435C92017DC3400D5EA01 /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20435B62017396800D5EA01 /* ChannelVC.swift in Sources */,
+				C20435C82017DAC500D5EA01 /* AvatarPickerVC.swift in Sources */,
 				C20435C42017B2DA00D5EA01 /* RoundedButton.swift in Sources */,
 				C20435B42017395400D5EA01 /* ChatVC.swift in Sources */,
 				C20435C62017BCD000D5EA01 /* UserDataService.swift in Sources */,
@@ -299,6 +306,7 @@
 				C20435C22017A90F00D5EA01 /* AuthService.swift in Sources */,
 				C20435BD20174FE700D5EA01 /* LoginVC.swift in Sources */,
 				C20435B8201742F500D5EA01 /* GradientView.swift in Sources */,
+				C20435CA2017DC3400D5EA01 /* AvatarCell.swift in Sources */,
 				2CE3D5172015D4F3007A4021 /* AppDelegate.swift in Sources */,
 				2CE3D5302015FE28007A4021 /* SWRevealViewController.m in Sources */,
 				C20435BB20174B3800D5EA01 /* Constants.swift in Sources */,
