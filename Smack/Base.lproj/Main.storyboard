@@ -125,7 +125,7 @@
                                     <action selector="loginBtnTapped:" destination="QXC-aJ-zCb" eventType="touchUpInside" id="SGx-xP-gwa"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-CC-YcI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-CC-YcI" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="YN7-d4-wDB"/>
@@ -315,6 +315,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="ovp-AS-rS6" id="azJ-OZ-TzI"/>
+                        <outlet property="usernameTxt" destination="TOS-cy-Gv6" id="EiI-87-FDq"/>
                         <segue destination="nse-hM-KgB" kind="show" identifier="toCreateAccount" id="6ib-qL-CHt"/>
                     </connections>
                 </viewController>
@@ -437,7 +439,7 @@
                                     <action selector="pickAvatarTapped:" destination="nse-hM-KgB" eventType="touchUpInside" id="Blh-LI-NbP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="FSc-Nf-hwr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="FSc-Nf-hwr" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137" y="312.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1Fp-bh-MKI"/>
@@ -458,6 +460,10 @@
                                     <action selector="pickBGColorTapped:" destination="nse-hM-KgB" eventType="touchUpInside" id="fGK-Zc-TS4"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0TC-0C-yhR">
+                                <rect key="frame" x="169" y="225" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -468,11 +474,13 @@
                             <constraint firstItem="bqE-wc-Bnz" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="Cb5-Tx-oss"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="width" secondItem="FSc-Nf-hwr" secondAttribute="width" id="Fa3-sx-4UL"/>
                             <constraint firstItem="FSc-Nf-hwr" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="Fiu-6v-GFo"/>
+                            <constraint firstItem="0TC-0C-yhR" firstAttribute="centerY" secondItem="A66-HD-DfP" secondAttribute="centerY" constant="-90" id="IB3-w6-Rnj"/>
                             <constraint firstItem="bqE-wc-Bnz" firstAttribute="top" secondItem="hbk-iv-jhB" secondAttribute="bottom" constant="40" id="PeY-72-6KM"/>
                             <constraint firstItem="Xgk-NK-mDq" firstAttribute="top" secondItem="A66-HD-DfP" secondAttribute="topMargin" constant="8" id="QqD-sY-OTO"/>
                             <constraint firstItem="FSc-Nf-hwr" firstAttribute="top" secondItem="bqE-wc-Bnz" secondAttribute="bottom" constant="40" id="U9n-BH-dGQ"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="top" secondItem="FSc-Nf-hwr" secondAttribute="top" id="V4q-13-Bao"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="XRD-0x-DpR"/>
+                            <constraint firstItem="0TC-0C-yhR" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="gD0-D2-q5p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xgk-NK-mDq" secondAttribute="trailing" id="pmL-Jk-Ds3"/>
                             <constraint firstItem="Ns8-mz-wWS" firstAttribute="top" secondItem="bQf-oP-CeI" secondAttribute="bottom" constant="4" id="ue5-Z1-44s"/>
                             <constraint firstItem="sjE-10-wSZ" firstAttribute="top" secondItem="Aoz-GT-Cbb" secondAttribute="bottom" constant="20" id="zCX-pr-2wJ"/>
@@ -481,6 +489,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="kPE-uI-ujM" id="cC5-V6-eki"/>
                         <outlet property="passwordTxt" destination="4pE-VW-u86" id="7f5-Q4-bko"/>
+                        <outlet property="spinner" destination="0TC-0C-yhR" id="63l-Tq-Bw7"/>
                         <outlet property="userImg" destination="FSc-Nf-hwr" id="y98-0f-nrj"/>
                         <outlet property="usernameTxt" destination="6ER-TT-fR6" id="tNn-eo-w5c"/>
                         <segue destination="qnu-dq-FOY" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="6yB-aM-dCn"/>
