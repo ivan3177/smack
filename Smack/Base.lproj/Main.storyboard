@@ -191,6 +191,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Xlw-cA-bmf" id="HeF-4k-MK6"/>
+                        <outlet property="userImg" destination="zmP-CC-YcI" id="GAY-Ip-t2K"/>
                         <segue destination="6RR-V3-Q5O" kind="show" identifier="toLogin" id="uuM-Vf-QHX"/>
                     </connections>
                 </viewController>
@@ -461,7 +462,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0TC-0C-yhR">
-                                <rect key="frame" x="169" y="225" width="37" height="37"/>
+                                <rect key="frame" x="169" y="270.5" width="37" height="37"/>
                                 <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
@@ -474,13 +475,13 @@
                             <constraint firstItem="bqE-wc-Bnz" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="Cb5-Tx-oss"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="width" secondItem="FSc-Nf-hwr" secondAttribute="width" id="Fa3-sx-4UL"/>
                             <constraint firstItem="FSc-Nf-hwr" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="Fiu-6v-GFo"/>
-                            <constraint firstItem="0TC-0C-yhR" firstAttribute="centerY" secondItem="A66-HD-DfP" secondAttribute="centerY" constant="-90" id="IB3-w6-Rnj"/>
                             <constraint firstItem="bqE-wc-Bnz" firstAttribute="top" secondItem="hbk-iv-jhB" secondAttribute="bottom" constant="40" id="PeY-72-6KM"/>
                             <constraint firstItem="Xgk-NK-mDq" firstAttribute="top" secondItem="A66-HD-DfP" secondAttribute="topMargin" constant="8" id="QqD-sY-OTO"/>
                             <constraint firstItem="FSc-Nf-hwr" firstAttribute="top" secondItem="bqE-wc-Bnz" secondAttribute="bottom" constant="40" id="U9n-BH-dGQ"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="top" secondItem="FSc-Nf-hwr" secondAttribute="top" id="V4q-13-Bao"/>
                             <constraint firstItem="bQf-oP-CeI" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="XRD-0x-DpR"/>
                             <constraint firstItem="0TC-0C-yhR" firstAttribute="centerX" secondItem="A66-HD-DfP" secondAttribute="centerX" id="gD0-D2-q5p"/>
+                            <constraint firstItem="FSc-Nf-hwr" firstAttribute="top" secondItem="0TC-0C-yhR" secondAttribute="bottom" constant="5" id="pVk-ZW-lZZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xgk-NK-mDq" secondAttribute="trailing" id="pmL-Jk-Ds3"/>
                             <constraint firstItem="Ns8-mz-wWS" firstAttribute="top" secondItem="bQf-oP-CeI" secondAttribute="bottom" constant="4" id="ue5-Z1-44s"/>
                             <constraint firstItem="sjE-10-wSZ" firstAttribute="top" secondItem="Aoz-GT-Cbb" secondAttribute="bottom" constant="20" id="zCX-pr-2wJ"/>
