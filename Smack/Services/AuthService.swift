@@ -95,22 +95,33 @@ class AuthService {
             "avatarColor": avatarColor
         ]
         
-        let header = [
-            "Authorization": "Bearer \(self.authToken)",
-            "ContentType": "application/json; charset=utf-8"
-        ]
-        
-        Alamofire.request(URL_CREATE_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_CREATE_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                let json = JSON(data)
-                UserDataService.instance.setUserData(id: json["_id"].stringValue, avatarColor: json["avatarColor"].stringValue, avatarName: json["avatarName"].stringValue, email: json["email"].stringValue, name: json["name"].stringValue)
-                
+                self.setUserInfo(data: data)
                 completion(true)
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
         }
+    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                self.setUserInfo(data: data)
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    private func setUserInfo(data: Data) {
+        let json = JSON(data)
+        UserDataService.instance.setUserData(id: json["_id"].stringValue, avatarColor: json["avatarColor"].stringValue, avatarName: json["avatarName"].stringValue, email: json["email"].stringValue, name: json["name"].stringValue)
     }
 }

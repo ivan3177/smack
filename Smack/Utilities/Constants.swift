@@ -15,6 +15,7 @@ let BASE_URL = "http://isokol-dev.ru:3005/v1"
 let URL_REGISTER = "\(BASE_URL)/account/register"
 let URL_LOGIN = "\(BASE_URL)/account/login"
 let URL_CREATE_USER = "\(BASE_URL)/user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)/user/byEmail/"
 
 // Colors
 let SMACK_PURPLE_PLACEHOLDER = #colorLiteral(red: 0.2395215631, green: 0.3320434093, blue: 0.7513638139, alpha: 0.5)
@@ -35,5 +36,10 @@ let USER_EMAIL = "userEmail"
 
 // Header
 let HEADER = [
+    "ContentType": "application/json; charset=utf-8"
+]
+
+let BEARER_HEADER = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "ContentType": "application/json; charset=utf-8"
 ]
