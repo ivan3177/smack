@@ -43,7 +43,7 @@ class AddChannelVC: UIViewController {
         
         guard let name = nameTxt.text, nameTxt.text != "" else { return }
         guard let description = descriptionTxt.text else { return }
-        MessageService.instance.createChannel(channelName: name, channelDescription: description) { (success) in
+        SocketService.instance.addChannel(channelName: name, channelDescription: description) { (success) in
             if success {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()

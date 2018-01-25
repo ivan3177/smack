@@ -37,7 +37,4 @@ class MessageService {
         }
     }
     
-    func createChannel(channelName name: String, channelDescription description: String, completion: @escaping CompletionHandler) {
-    }
-    
 }
