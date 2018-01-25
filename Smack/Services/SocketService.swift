@@ -25,7 +25,8 @@ class SocketService: NSObject {
         manager.defaultSocket.disconnect()
     }
     
-    func addChannel(channelName name: String, channelDescription description: String, completion: @escaping CompletionHandler) {
+    func addChannel(channelName name: String, channelDescription description: String,
+                    completion: @escaping CompletionHandler) {
         manager.defaultSocket.emit(SOCKET_EVT_NEW_CHANNEL, name, description)
         completion(true)
     }

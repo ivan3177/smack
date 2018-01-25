@@ -335,7 +335,7 @@
                     <connections>
                         <outlet property="passwordTxt" destination="ovp-AS-rS6" id="WcY-8a-TAM"/>
                         <outlet property="spinner" destination="y6W-TL-0Dm" id="bq3-Yv-mpS"/>
-                        <outlet property="usernameTxt" destination="TOS-cy-Gv6" id="miZ-4w-hMf"/>
+                        <outlet property="userEmailTxt" destination="TOS-cy-Gv6" id="miZ-4w-hMf"/>
                         <segue destination="nse-hM-KgB" kind="show" identifier="toCreateAccount" id="6ib-qL-CHt"/>
                     </connections>
                 </viewController>
@@ -385,7 +385,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-wc-Bnz">
                                 <rect key="frame" x="62.5" y="130.5" width="250" height="142"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ER-TT-fR6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ER-TT-fR6">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="2eI-fE-qyR"/>
@@ -402,7 +402,7 @@
                                             <constraint firstAttribute="width" constant="250" id="ge0-jq-vhn"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-uI-ujM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-uI-ujM">
                                         <rect key="frame" x="0.0" y="54" width="250" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="3Jd-pN-NHq"/>
@@ -419,7 +419,7 @@
                                             <constraint firstAttribute="width" constant="250" id="PcK-Pe-cjl"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pE-VW-u86">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pE-VW-u86">
                                         <rect key="frame" x="0.0" y="105" width="250" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="564-Y8-6sW"/>
@@ -507,10 +507,10 @@
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="kPE-uI-ujM" id="cC5-V6-eki"/>
+                        <outlet property="nicknameTxt" destination="6ER-TT-fR6" id="tNn-eo-w5c"/>
                         <outlet property="passwordTxt" destination="4pE-VW-u86" id="7f5-Q4-bko"/>
                         <outlet property="spinner" destination="0TC-0C-yhR" id="63l-Tq-Bw7"/>
                         <outlet property="userImg" destination="FSc-Nf-hwr" id="y98-0f-nrj"/>
-                        <outlet property="usernameTxt" destination="6ER-TT-fR6" id="tNn-eo-w5c"/>
                         <segue destination="qnu-dq-FOY" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="6yB-aM-dCn"/>
                         <segue destination="cQ4-HL-1Ih" kind="show" identifier="toAvatarPicker" id="ccv-zR-CQt"/>
                     </connections>
@@ -673,7 +673,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="3GS-QW-G1J">
                                 <rect key="frame" x="62.5" y="160" width="250" height="91"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYJ-r9-ff0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYJ-r9-ff0">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="1Xw-t3-WM2"/>
@@ -690,7 +690,7 @@
                                             <constraint firstAttribute="width" constant="250" id="eED-ed-nXC"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1L-yG-4Bb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1L-yG-4Bb">
                                         <rect key="frame" x="0.0" y="54" width="250" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="hiW-sv-v9E"/>

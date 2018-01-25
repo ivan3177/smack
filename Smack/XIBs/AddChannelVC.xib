@@ -79,7 +79,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Xa-Ic-71r">
                             <rect key="frame" x="42" y="88" width="250" height="90"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Channel name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHs-Pe-vWP">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHs-Pe-vWP">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="250" id="xiG-CP-dQQ"/>
@@ -96,7 +96,7 @@
                                         <constraint firstAttribute="height" constant="2" id="qOf-ki-xTn"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Vl-8Wx">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Vl-8Wx">
                                     <rect key="frame" x="0.0" y="50" width="250" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="250" id="gSN-zS-P4h"/>

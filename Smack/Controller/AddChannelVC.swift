@@ -22,8 +22,10 @@ class AddChannelVC: UIViewController {
     
     func setupView() {
         spinner.isHidden = true
-        nameTxt.attributedPlaceholder = NSAttributedString(string: "channel name", attributes: [.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
-        descriptionTxt.attributedPlaceholder = NSAttributedString(string: "description", attributes: [.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
+        nameTxt.attributedPlaceholder = NSAttributedString(string: "channel name", attributes:
+            [.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
+        descriptionTxt.attributedPlaceholder = NSAttributedString(string: "description", attributes:
+            [.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
         
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeTap(_:)))
         bgView.addGestureRecognizer(closeTap)
@@ -43,7 +45,8 @@ class AddChannelVC: UIViewController {
         
         guard let name = nameTxt.text, nameTxt.text != "" else { return }
         guard let description = descriptionTxt.text else { return }
-        SocketService.instance.addChannel(channelName: name, channelDescription: description) { (success) in
+        SocketService.instance.addChannel(channelName: name, channelDescription: description) {
+            (success) in
             if success {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
