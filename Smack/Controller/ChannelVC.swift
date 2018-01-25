@@ -52,6 +52,14 @@ class ChannelVC: UIViewController {
         }
     }
     
+    @IBAction func addChannelTapped(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
 }

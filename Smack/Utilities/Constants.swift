@@ -17,6 +17,7 @@ let URL_LOGIN = "\(BASE_URL)/account/login"
 let URL_CREATE_USER = "\(BASE_URL)/user/add"
 let URL_USER_BY_EMAIL = "\(BASE_URL)/user/byEmail/"
 let URL_GET_CHANNELS = "\(BASE_URL)/channel"
+let URL_CREATE_CHANNEL = "\(BASE_URL)/channel/add"
 
 // Colors
 let SMACK_PURPLE_PLACEHOLDER = #colorLiteral(red: 0.2395215631, green: 0.3320434093, blue: 0.7513638139, alpha: 0.5)
