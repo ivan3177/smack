@@ -78,13 +78,16 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-3R-9fA">
-                                <rect key="frame" x="0.0" y="627" width="345" height="40"/>
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sYr-v7-bh0"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageTxtEditing:" destination="9aV-9S-l3U" eventType="editingChanged" id="Y5r-t6-ExA"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRp-dF-gbc">
                                 <rect key="frame" x="345" y="632" width="30" height="30"/>
@@ -168,7 +171,7 @@
                             <constraint firstAttribute="trailing" secondItem="6bB-OD-iyY" secondAttribute="trailing" id="LgX-lc-MvJ"/>
                             <constraint firstItem="6bB-OD-iyY" firstAttribute="top" secondItem="h9B-zW-eRA" secondAttribute="top" id="NXw-XO-u99"/>
                             <constraint firstItem="xfe-xi-Mem" firstAttribute="top" secondItem="6bB-OD-iyY" secondAttribute="bottom" id="U1V-2C-7Nk"/>
-                            <constraint firstItem="TRp-dF-gbc" firstAttribute="leading" secondItem="vbw-3R-9fA" secondAttribute="trailing" id="jTW-yJ-0RN"/>
+                            <constraint firstAttribute="trailing" secondItem="vbw-3R-9fA" secondAttribute="trailing" id="cm8-fT-gbE"/>
                             <constraint firstItem="xfe-xi-Mem" firstAttribute="leading" secondItem="h9B-zW-eRA" secondAttribute="leading" id="qSz-a0-rWM"/>
                             <constraint firstItem="lE7-ac-AoH" firstAttribute="top" secondItem="vbw-3R-9fA" secondAttribute="bottom" id="rkH-nC-gja"/>
                         </constraints>
@@ -178,6 +181,7 @@
                         <outlet property="menuBtn" destination="oZs-Ch-Iyk" id="bub-CW-5qC"/>
                         <outlet property="messageTxt" destination="vbw-3R-9fA" id="LGS-0R-dzW"/>
                         <outlet property="messagesTableView" destination="xfe-xi-Mem" id="QdC-Ue-e7V"/>
+                        <outlet property="sendMsgBtn" destination="TRp-dF-gbc" id="7fu-h2-RqM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXn-Qi-ltp" userLabel="First Responder" sceneMemberID="firstResponder"/>

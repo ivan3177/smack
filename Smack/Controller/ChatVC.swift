@@ -15,6 +15,9 @@ class ChatVC: UIViewController {
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var sendMsgBtn: UIButton!
+    
+    private var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class ChatVC: UIViewController {
         
         messagesTableView.estimatedRowHeight = 80
         messagesTableView.rowHeight = UITableViewAutomaticDimension
+        sendMsgBtn.isHidden = true
         
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
@@ -39,6 +43,17 @@ class ChatVC: UIViewController {
                                                name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)),
                                                name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        SocketService.instance.getMessage { (success) in
+            if success {
+                self.messagesTableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1,
+                                             section: 0)
+                    self.messagesTableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
         
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail(completion: { (success) in
@@ -60,6 +75,7 @@ class ChatVC: UIViewController {
             onLoginGetMessages()
         } else {
             channelNameLbl.text = "Please Log in"
+            messagesTableView.reloadData()
         }
     }
     
@@ -84,7 +100,7 @@ class ChatVC: UIViewController {
     
     func getMessages() {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
-        MessageService.instance.fundAllMessages(forChannel: channelId) { (success) in
+        MessageService.instance.findAllMessages(forChannel: channelId) { (success) in
             if success {
                 self.messagesTableView.reloadData()
             }
@@ -106,6 +122,18 @@ class ChatVC: UIViewController {
         }
     }
     
+    @IBAction func messageTxtEditing(_ sender: Any) {
+        if messageTxt.text == "" {
+            isTyping = false
+            sendMsgBtn.isHidden = true
+        } else {
+            if isTyping == false {
+                sendMsgBtn.isHidden = false
+            }
+            isTyping = true
+        }
+    }
+    
 }
 
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
@@ -117,7 +145,8 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+        -> UITableViewCell {
         if let cell = messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for:
             indexPath) as? MessageCell {
             let message = MessageService.instance.messages[indexPath.row]
