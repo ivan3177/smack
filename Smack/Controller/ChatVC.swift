@@ -45,8 +45,10 @@ class ChatVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)),
                                                name: NOTIF_CHANNEL_SELECTED, object: nil)
         
-        SocketService.instance.getMessage { (success) in
-            if success {
+        SocketService.instance.getMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService
+                .instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
                 self.messagesTableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1,
@@ -145,7 +147,7 @@ class ChatVC: UIViewController {
                     if success {
                         self.messageTxt.text = ""
                         self.messageTxt.resignFirstResponder()
-                        SocketService.instance.manager.defaultSocket.emit(SOCKET_EVT_START_TYPE,
+                        SocketService.instance.manager.defaultSocket.emit(SOCKET_EVT_STOP_TYPE,
                                                                           UserDataService.instance
                                                                             .name, channelId)
                     }
