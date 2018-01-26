@@ -24,6 +24,9 @@ let SOCKET_EVT_NEW_CHANNEL = "newChannel"
 let SOCKET_EVT_CHANNEL_CREATED = "channelCreated"
 let SOCKET_EVT_NEW_MESSAGE = "newMessage"
 let SOCKET_EVT_MESSAGE_CREATED = "messageCreated"
+let SOCKET_EVT_USER_TYPING_UPDATE = "userTypingUpdate"
+let SOCKET_EVT_START_TYPE = "startType"
+let SOCKET_EVT_STOP_TYPE = "stopType"
 
 // Colors
 let SMACK_PURPLE_PLACEHOLDER = #colorLiteral(red: 0.2395215631, green: 0.3320434093, blue: 0.7513638139, alpha: 0.5)

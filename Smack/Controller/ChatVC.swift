@@ -16,6 +16,7 @@ class ChatVC: UIViewController {
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var sendMsgBtn: UIButton!
+    @IBOutlet weak var typingUsersLbl: UILabel!
     
     private var isTyping = false
     
@@ -52,6 +53,33 @@ class ChatVC: UIViewController {
                                              section: 0)
                     self.messagesTableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
                 }
+            }
+        }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            var names = ""
+            var numberOfTypers = 0
+            
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channelId == channel {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.typingUsersLbl.text = "\(names) \(verb) typing a messge"
+            } else {
+                self.typingUsersLbl.text = ""
             }
         }
         
@@ -117,18 +145,27 @@ class ChatVC: UIViewController {
                     if success {
                         self.messageTxt.text = ""
                         self.messageTxt.resignFirstResponder()
+                        SocketService.instance.manager.defaultSocket.emit(SOCKET_EVT_START_TYPE,
+                                                                          UserDataService.instance
+                                                                            .name, channelId)
                     }
             }
         }
     }
     
     @IBAction func messageTxtEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         if messageTxt.text == "" {
             isTyping = false
             sendMsgBtn.isHidden = true
+            SocketService.instance.manager.defaultSocket.emit(SOCKET_EVT_STOP_TYPE, UserDataService
+                .instance.name, channelId)
         } else {
             if isTyping == false {
                 sendMsgBtn.isHidden = false
+                SocketService.instance.manager.defaultSocket.emit(SOCKET_EVT_START_TYPE,
+                                                                  UserDataService.instance.name,
+                                                                  channelId)
             }
             isTyping = true
         }
